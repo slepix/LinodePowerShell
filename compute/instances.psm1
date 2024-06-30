@@ -133,7 +133,7 @@ function Get-LinodeInstances{
     
 }
 
-function Get-Linodeinstance{
+function Get-LinodeInstance{
     param (
         [Parameter(mandatory=$false)]                                           
         [string]$token = $linodetoken,
@@ -178,7 +178,6 @@ function Get-Linodeinstance{
     }
     $linode = Invoke-RestMethod -Uri $uri -Method GET -Headers $headers
     $linode
-   
 }
 
 function Remove-LinodeInstance{
@@ -498,7 +497,6 @@ function Copy-LinodeInstance{
         $_.ErrorDetails.Message
     }
 }
-
 
 function Move-LinodeInstance{
     param (
