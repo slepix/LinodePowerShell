@@ -149,12 +149,12 @@ root_password    : eJbd\OQC9ypSagfvTSG@XREV4
 PS C:\> Remove-LinodeInstance -label myInstance -confirm # Deletes a Linode instance
 Instance 60827598 deleted
 ```
-Even though the commandlet will ask you for parameters, you can also use ***'Get-Help'*** commandlet in order to find out which parametes each command requires
+Even though the commandlet will ask you for parameters, you can also use ***'Get-Help'*** commandlet in order to find out which parametes each command requires.
 
 Example:
 
 ```powershell
-PS /> get-help New-LinodeVPC
+PS /> Get-Help New-LinodeVPC
 
 NAME
     New-LinodeVPC
@@ -229,7 +229,7 @@ lke_cluster_id   :
 ```
 ### Development
 
-Focus of implementation is as follows:
+Status of implementation is as follows:
 
 | Area    | Status  | Notes 
 | ----------- | ----------- |-----------
