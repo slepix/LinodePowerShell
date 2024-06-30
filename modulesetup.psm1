@@ -12,10 +12,10 @@ function Connect-LinodeAccount{
 
     $body = @{}
     $configbody = @{}
-    $profile = Read-Host "Enter profile name. This is useful if you want to use multiple Linode accounts"
-    while(!$profile){
+    $usrprofile = Read-Host "Enter profile name. This is useful if you want to use multiple Linode accounts"
+    while(!$usrprofile){
         echo "Profile name is mandatory"
-        $profile = Read-Host "Enter profile name. This is useful if you want to use multiple Linode accounts"
+        $usrprofile = Read-Host "Enter profile name. This is useful if you want to use multiple Linode accounts"
     }  
     $encrypted = Read-Host "Do you wish to encrypt the token which will be saved in the configuration file?
         This is the RECOMMENDED option, but the drawback is that you cannot manually edit the credentials file (Y/N)"
@@ -57,15 +57,16 @@ function Connect-LinodeAccount{
     if($defaultregion){
         $body.Add("region","$defaultregion")
     }
-    $body.Add("profile_id","$profile")
+    $body.Add("profile_id","$usrprofile")
     $body = $body | ConvertTo-Json
-    $writeprofile = New-item -path $configurationpath\$profile-profile.json -value $body -force
+    $writeprofile = New-item -path $configurationpath\$usrprofile-profile.json -value $body -force
     $configbody.Add("profile_folder","$configurationpath")
-    $configbody.Add("current_profile","$profile")
+    $configbody.Add("current_profile","$usrprofile")
     $configbody = $configbody | ConvertTo-Json
     $writeconfig = New-item -path $homepath\config.json -value $configbody -force
+    $setprofile = $usrprofile
     Write-host -ForegroundColor Green "Profile added and stored in $configurationpath. Go get Akamaized!"
-
+    Set-LinodeProviderProfile -profile $setprofile
 }
 
 function Set-LinodeProviderProfile {
