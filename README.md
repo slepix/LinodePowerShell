@@ -7,7 +7,7 @@
 Unofficial PowerShell module for managing Linode resources using the Linode API.<br>
 This module will work on both Windows and Linux operating systems. 
 
-Development status:
+### Development status:
 
 Percent complete: **44.56%**<br>
 Total commands: 368<br>
@@ -27,7 +27,7 @@ Implemented commands: 164
 
 ### Installation
 
-To install the Linode PowerShell module, need to clone this repository, position yourself into the Module folder and import the module:
+To install the Linode PowerShell module, you need to clone this repository, position yourself into the module folder and import the module:
 
 ```powershell
 git clone git@github.com:slepix/LinodePowerShell.git
@@ -40,9 +40,11 @@ Before you can use the module, you need to import it using the following command
 ```powershell
 Import-Module -Name LinodePSModule
 ```
+After the module has been imported, you need to configure it and add your Linode account. 
+
 ### Configuration
 
-Configuration is really simple, all you need to do is run ***'Connect-LinodeAccount'*** command and follow the configuration wizard. <br><br>
+Configuration is really simple, all you need to do is run **'Connect-LinodeAccount'** command and follow the configuration wizard. <br><br>
 You can run this command for each Linode account you want to add.<br>
 Check in the examples how you can switch between different Linode accounts. 
 
@@ -57,10 +59,10 @@ However, you are free to limit the scope of the API token to suit your security 
 
 ### Commands
 
-List of available commands can be viewed by running this command
+List of currently available commands can be viewed by running this command
 
 ```powershell
-(get-module LinodePSModule).ExportedCommands
+(Get-Module LinodePSModule).ExportedCommands
 ```
 Example commands
 
@@ -74,7 +76,7 @@ PS C:\> Set-LinodeProviderProfile -profile test
 Profile test loaded
 ```
 ```powershell
-PS C:\> PS C:\> Get-LinodeRegions | Select label, id, status
+PS C:\> Get-LinodeRegions | Select label, id, status
 
 label           id           status
 -----           --           ------
