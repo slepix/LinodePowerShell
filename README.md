@@ -64,17 +64,19 @@ List of currently available commands can be viewed by running this command
 ```powershell
 (Get-Module LinodePSModule).ExportedCommands
 ```
-Example commands
-
+### Example commands
+List all currently configured profiles
 ```powershell
 PS C:\> Get-LinodeProviderProfiles # returns a list of all currently configured profiles
 development
 test
 ```
+Switch to a profile named "test"
 ```powershell
 PS C:\> Set-LinodeProviderProfile -profile test
 Profile test loaded
 ```
+Get a list of all regions, but only return label, id and status of each region
 ```powershell
 PS C:\> Get-LinodeRegions | Select label, id, status
 
@@ -106,6 +108,7 @@ Singapore, SG   ap-south     ok
 Frankfurt, DE   eu-central   ok
 Tokyo, JP       ap-northeast ok
 ```
+Returns all properties of a single region
 ```powershell
 PS C:\> Get-LinodeRegion -region nl-ams # list only nl-ams region
 
@@ -120,6 +123,7 @@ resolvers              : @{ipv4=172.233.33.36, 172.233.33.38, 172.233.33.35, 172
 placement_group_limits : @{maximum_pgs_per_customer=100; maximum_linodes_per_pg=5}
 site_type              : core
 ```
+Create a new Linode named "myInstance" with the instance type of "g6-nanode-1" in nl-ams region and a randomly generated password 25 characters long running Debian 11
 ```powershell
 PS C:\> New-LinodeInstance -label myInstance -region nl-ams -type g6-nanode-1 -image linode/debian11 -generatepassword -passwordlength 25 # creates a Nanode instance in nl-ams region with randomly generated root password
 
@@ -147,6 +151,7 @@ placement_group  :
 lke_cluster_id   :
 root_password    : eJbd\OQC9ypSagfvTSG@XREV4
 ```
+Delete a Linode instance
 ```powershell
 PS C:\> Remove-LinodeInstance -label myInstance -confirm # Deletes a Linode instance
 Instance 60827598 deleted
@@ -235,7 +240,7 @@ Status of implementation is as follows:
 
 | Area    | Status  | Notes 
 | ----------- | ----------- |-----------
-| **Account**     | Done       |All read commands done. Billing is not planned yet
+| **Account**     | Done       |All functionalities besides billing available.
 | **Beta programs**| Done       |All functionalities available
 | **Account availability**| Done       |All functionalities available
 | **Child accounts**| Not started       |None
@@ -253,13 +258,13 @@ Status of implementation is as follows:
 | **Service transfers**| Not started       |None
 | **Account settings**| Not started       |None
 | **Settings**| Not started       |None
-| **Account transfer**| Done       |None
-| **Users**| Done       |Everything besides "Update user's grant" command is implemented
-| **Beta programs**| Done       |All functionalities available
-| **Databases**| WIP       |MySQL 95% done, PostgreSQL 0%
-| **Domains**| WIP       |All GET commands done, 80% of write commands done
+| **Account transfer**| Done       |All functionalities available.
+| **Users**| Done       |Everything besides "Update user's grant" command is implemented.
+| **Beta programs**| Done       |All functionalities available.
+| **Databases**| WIP       |MySQL 95% done, PostgreSQL 0%.
+| **Domains**| WIP       |All GET commands done, 80% of write commands done.
 | **Images**| Done       |None
-| **Instances**| WIP       |60% Done.Basic features are already available
+| **Instances**| WIP       |60% done. Most important features are already available
 | **StackScripts**| WIP       |80% done
 | **LKE**| WIP       |95% done
 | **Longview**| WIP       |0% done
@@ -269,11 +274,11 @@ Status of implementation is as follows:
 | **Object storage**| Done       |100% done
 | **Placement groups**| WIP       |0% done
 | **Profile**| WIP       |0% done
-| **Regions**| Done       |100% done
+| **Regions**| Done       |All functionalities available.
 | **Support**| WIP       |0% done
-| **Tags**| Done       |100% done
+| **Tags**| Done       |All functionalities available.
 | **Volumes**| WIP       |50% done
-| **VPC**| Done       |100% done
+| **VPC**| Done       |All functionalities available.
 
 
       
