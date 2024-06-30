@@ -27,10 +27,11 @@ Implemented commands: 164
 
 ### Installation
 
-To install the Linode PowerShell module, you can use the following command:
+To install the Linode PowerShell module, need to clone this repository, position yourself into the Module folder and import the module:
 
 ```powershell
-Install-Module -Name LinodePSModule
+git clone git@github.com:slepix/LinodePowerShell.git
+cd LinodePowershell
 ```
 ### Usage
 
