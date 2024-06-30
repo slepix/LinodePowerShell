@@ -31,7 +31,7 @@ To install the Linode PowerShell module, you need to clone this repository, posi
 
 ```powershell
 git clone https://github.com/slepix/LinodePowerShell.git
-cd LinodePowershell
+cd LinodePowerShell
 ```
 ### Usage
 
