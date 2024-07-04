@@ -9,9 +9,9 @@ This module will work on both Windows and Linux operating systems.
 
 ### Development status:
 
-Percent complete: **44.56%**<br>
+Percent complete: **51.35%**<br>
 Total commands: 368<br>
-Implemented commands: 164
+Implemented commands: 189
 
 
 ### Table of Contents
@@ -236,7 +236,10 @@ lke_cluster_id   :
 ```
 ### Development
 
+LIVE development status: https://docs.google.com/spreadsheets/d/1UCzCSL3fRUB6cJKZJBUFEq-hPzaxGcS7B37nP12Ee3I/edit?usp=sharing <br><br>
 Status of implementation is as follows:
+
+
 
 | Area    | Status  | Notes 
 | ----------- | ----------- |-----------

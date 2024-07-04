@@ -698,3 +698,78 @@ function Get-LinodeAccountLogin {
         $_.ErrorDetails.Message
     }
 }
+
+function Get-LinodeChildAccounts {
+    param (
+        [string]$apiVersion = "v4",
+        [Parameter(mandatory=$false)]                                           
+        [string]$token = $linodetoken,
+        [int]$page = 1,
+        [int]$pagesize = 100
+    )
+
+    $uri = "https://api.linode.com/v4/account/child-accounts?page=$page&page_size=$pagesize"
+
+    $headers = @{
+        "Authorization" = "Bearer $Token"
+        "accept"  = "application/json"        
+    }
+   
+    try {
+        $getlinodechildaccounts = Invoke-RestMethod -Uri $uri -Method GET -Headers $headers
+        return $getlinodechildaccounts.data 
+    }
+    catch {
+        $_.ErrorDetails.Message
+    }
+}
+
+function Get-LinodeChildAccount {
+    param (
+        [string]$apiVersion = "v4",
+        [Parameter(mandatory=$false)]                                           
+        [string]$token = $linodetoken,
+        [Parameter(mandatory=$true)]  
+        [string]$euuid
+    )
+
+    $uri = "https://api.linode.com/v4/account/child-accounts/$euuid"
+
+    $headers = @{
+        "Authorization" = "Bearer $Token"
+        "accept"  = "application/json"        
+    }
+   
+    try {
+        $getlinodechildaccount = Invoke-RestMethod -Uri $uri -Method GET -Headers $headers
+        return $getlinodechildaccount
+    }
+    catch {
+        $_.ErrorDetails.Message
+    }
+}
+
+function New-LinodeProxyUserToken {
+    param (
+        [string]$apiVersion = "v4",
+        [Parameter(mandatory=$false)]                                           
+        [string]$token = $linodetoken,
+        [Parameter(mandatory=$true)]  
+        [string]$euuid
+    )
+
+    $uri = "https://api.linode.com/v4/account/child-accounts/$euuid/token"
+
+    $headers = @{
+        "Authorization" = "Bearer $Token"
+        "accept"  = "application/json"        
+    }
+   
+    try {
+        $newlinodeproxyusertoken = Invoke-RestMethod -Uri $uri -Method POST -Headers $headers
+        return $newlinodeproxyusertoken
+    }
+    catch {
+        $_.ErrorDetails.Message
+    }
+}
