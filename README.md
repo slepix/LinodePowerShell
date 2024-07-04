@@ -246,7 +246,7 @@ Status of implementation is as follows:
 | **Account**     | Done       |All functionalities besides billing available.
 | **Beta programs**| Done       |All functionalities available
 | **Account availability**| Done       |All functionalities available
-| **Child accounts**| Not started       |None
+| **Child accounts**| Done       |All functionalities available.
 | **Payments**| Not started       |None
 | **Entity transfers**| Not started       |None
 | **Events**| WIP       |Mark as read and seen not implemented yet
@@ -256,7 +256,7 @@ Status of implementation is as follows:
 | **Notifications**| Done       |All functionalities available
 | **Oauth Clients**| Not started       |None
 | **Client thumbnails**| Not started       |None
-| **Payment methods**| Not started       |None
+| **Payment methods**| Done       |All functionalities available.
 | **Promo credits**| Not started       |None
 | **Service transfers**| Not started       |None
 | **Account settings**| Not started       |None
@@ -280,7 +280,7 @@ Status of implementation is as follows:
 | **Regions**| Done       |All functionalities available.
 | **Support**| WIP       |0% done
 | **Tags**| Done       |All functionalities available.
-| **Volumes**| WIP       |50% done
+| **Volumes**| Done       |All functionalities available.
 | **VPC**| Done       |All functionalities available.
 
 
