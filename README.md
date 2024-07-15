@@ -4,14 +4,14 @@
 
 ## Important: This module is still under active development and not all features are YET available.
 
-Unofficial PowerShell module for managing Linode resources using the Linode API.<br>
+**Unofficial** PowerShell module for managing Linode resources using the Linode API.<br>
 This module will work on both Windows and Linux operating systems. 
 
 ### Development status:
 
-Percent complete: **51.35%**<br>
+Percent complete: **56.52%**<br>
 Total commands: 368<br>
-Implemented commands: 189
+Implemented commands: 208
 
 
 ### Table of Contents
@@ -247,7 +247,7 @@ Status of implementation is as follows:
 | **Beta programs**| Done       |All functionalities available
 | **Account availability**| Done       |All functionalities available
 | **Child accounts**| Done       |All functionalities available.
-| **Payments**| Not started       |None
+| **Payments**| Done        |All functionalities available.
 | **Entity transfers**| Not started       |None
 | **Events**| WIP       |Mark as read and seen not implemented yet
 | **Invoices**| Done       |All functionalities available
@@ -264,17 +264,17 @@ Status of implementation is as follows:
 | **Account transfer**| Done       |All functionalities available.
 | **Users**| Done       |Everything besides "Update user's grant" command is implemented.
 | **Beta programs**| Done       |All functionalities available.
-| **Databases**| WIP       |MySQL 95% done, PostgreSQL 0%.
+| **Databases**| WIP       |MySQL 95% done, PostgreSQL 95%.
 | **Domains**| WIP       |All GET commands done, 80% of write commands done.
 | **Images**| Done       |None
 | **Instances**| WIP       |60% done. Most important features are already available
 | **StackScripts**| WIP       |80% done
 | **LKE**| WIP       |95% done
-| **Longview**| WIP       |0% done
+| **Longview**| WIP       |80% done
 | **Managed**| WIP       |0% done
 | **Networking**| WIP       |80% done
 | **NodeBalancers**| WIP       |80% done
-| **Object storage**| Done       |100% done
+| **Object storage**| Done       |All functionalities available.
 | **Placement groups**| WIP       |0% done
 | **Profile**| WIP       |0% done
 | **Regions**| Done       |All functionalities available.

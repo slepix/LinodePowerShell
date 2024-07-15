@@ -1,18 +1,18 @@
 function Get-LinodeRegions{
     param (
         [Parameter(mandatory=$false)]                                           
-        [string]$token
+        [string]$token = $linodetoken
     )
 
     $uri = "https://api.linode.com/v4/regions"
 
     $headers = @{
-        "Authorization" = "Bearer $Token"
+        "Authorization" = "Bearer $token"
         "accept"  = "application/json"
     }
     try {
         $getlinoderegions = Invoke-RestMethod -Uri $uri -Method GET -Headers $headers # -body $body
-        return $getlinoderegions.data  
+        return $getlinoderegions.data
     }
     catch {
         $_.ErrorDetails.Message
@@ -22,7 +22,7 @@ function Get-LinodeRegions{
 function Get-LinodeRegionAvailability{
     param (
         [Parameter(mandatory=$false)]                                           
-        [string]$token,
+        [string]$token = $linodetoken,
         [string]$page = "1"
     )
 
@@ -68,7 +68,7 @@ function Get-LinodeRegionAvailability{
  function Get-LinodeRegion{
     param (
         [Parameter(mandatory=$false)]                                           
-        [string]$token,
+        [string]$linodetoken,
         [Parameter(mandatory=$true)]                                           
         [string]$region
     )
@@ -76,7 +76,7 @@ function Get-LinodeRegionAvailability{
     $uri = "https://api.linode.com/v4/regions/$region"
     #echo $uri
     $headers = @{
-        "Authorization" = "Bearer $Token"
+        "Authorization" = "Bearer $linodetoken"
         "accept"  = "application/json"
     }
     try {
