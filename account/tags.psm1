@@ -164,7 +164,7 @@ function Get-LinodeTaggedObjects {
     }
 
     $uri = "https://api.linode.com/v4/tags/$label" + "?page=$page&page_size=$pagesize"
-  echo "$uri"
+ 
     $headers = @{
         "Authorization" = "Bearer $Token"
         "accept"  = "application/json"        
