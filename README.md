@@ -38,7 +38,7 @@ cd LinodePowerShell
 Before you can use the module, you need to import it using the following command:
 
 ```powershell
-Import-Module -Name ./LinodePSModule.psd1
+Import-Module -Name ./LinodePSModule.psd1 -force
 ```
 After the module has been imported, you need to configure it and add your Linode account. 
 
